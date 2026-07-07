@@ -1,18 +1,85 @@
-# React + Vite
+# AI Powered Debt Relief & Financial Recovery Platform — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Quick Start
 
-Currently, two official plugins are available:
+### 1. Install dependencies
+```bash
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 2. Run development server
+```bash
+npm run dev
+```
+Frontend runs at: http://localhost:5173
 
-## React Compiler
+### 3. Build for production
+```bash
+npm run build
+```
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## Pages
 
-## Expanding the ESLint configuration
+| Route | Page | Auth Required |
+|-------|------|---------------|
+| / | Landing Page | No |
+| /login | Login | No |
+| /register | Register | No |
+| /dashboard | Dashboard | Yes |
+| /loans | Loan List | Yes |
+| /loans/add | Add Loan | Yes |
+| /loans/:id | Loan Detail + AI | Yes |
+| /loans/:id/edit | Edit Loan | Yes |
+| /financial-health | Health Analysis | Yes |
+| /settlements | Settlements | Yes |
+| /ai-negotiation | AI Engine Hub | Yes |
+| /ai-history | AI History | Yes |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Project Structure
+```
+frontend/src/
+├── App.jsx              # Router + layout wrapper
+├── main.jsx             # Entry point
+├── index.css            # Global styles
+├── context/
+│   └── AuthContext.jsx  # JWT auth state + hooks
+├── services/
+│   ├── api.js           # Axios instance (auto-attach Bearer token)
+│   ├── authService.js   # Auth API calls
+│   ├── loanService.js   # Loan CRUD calls
+│   ├── financialService.js  # Health + settlement calls
+│   ├── aiService.js     # AI generation calls
+│   └── dashboardService.js  # Dashboard calls
+├── components/
+│   ├── Navbar.jsx       # Navigation bar
+│   ├── ProtectedRoute.jsx  # Auth guard
+│   ├── StatCard.jsx     # KPI stat display card
+│   ├── LoadingSpinner.jsx  # Loading indicator
+│   ├── AlertMessage.jsx # Error/success alerts
+│   └── HealthScoreBadge.jsx  # Circular health score SVG
+└── pages/
+    ├── LandingPage.jsx  # Public home page
+    ├── LoginPage.jsx
+    ├── RegisterPage.jsx
+    ├── DashboardPage.jsx     # Charts + summary
+    ├── LoansPage.jsx         # Loan table
+    ├── AddLoanPage.jsx
+    ├── EditLoanPage.jsx
+    ├── LoanDetailPage.jsx    # Health + Settlement + AI
+    ├── FinancialHealthPage.jsx
+    ├── SettlementsPage.jsx
+    ├── AIPage.jsx            # AI generation hub
+    └── AIHistoryPage.jsx
+```
+
+---
+
+## Technology
+- **React 19** + **Vite 8**
+- **React Router v6** — client-side routing
+- **Axios** — HTTP client with JWT interceptor
+- **Chart.js + react-chartjs-2** — Doughnut and Bar charts
