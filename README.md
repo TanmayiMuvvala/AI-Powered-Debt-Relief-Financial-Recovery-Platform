@@ -29,10 +29,9 @@ The AI Powered Debt Relief & Financial Recovery Platform is an intelligent web a
 
 ## Team Members
 
-- Garapati Meghana (Team Lead)
-- Sukeerthi Pathakamudi
 - Tanmayi Muvvala
 - Tejaswini Vaddhi
+- Sukeerthi Pathakamudi
 - Varanasi Vivek
 
 ## Status
