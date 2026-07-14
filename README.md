@@ -36,4 +36,7 @@ The AI Powered Debt Relief & Financial Recovery Platform is an intelligent web a
 
 ## Status
 
-Project Initialization Completed
+Project Completed
+
+## Demo link
+https://drive.google.com/file/d/1X2C_YoRTNfWMqDbSl0eGmOnKhljuKprp/view?usp=sharing
